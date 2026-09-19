@@ -1,470 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5 Ways I Earn $1,000+ a Month With Bluehost</title>
-<meta name="description" content="Five real income methods built on one Bluehost account — the tools, the steps, and what each one actually pays.">
+<meta name="description" content="Як заробляти від 1500$ на місяць на власному сайті — покроковий гайд без ІТ-навичок та коду.">
+<title>Як заробляти від 1500 $ на місяць на власному сайті?</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F5F3EC;
-    --paper-raised:#FBFAF6;
-    --ink:#1B1B18;
-    --ink-soft:#4A4838;
-    --muted:#7A7768;
-    --line:#D8D3C2;
-    --green:#146C43;
-    --green-deep:#0E4E31;
-    --red:#B23A2E;
-    --shadow: 0 1px 0 rgba(27,27,24,0.06);
+    --bg:#F5F6F8;
+    --paper:#FFFFFF;
+    --ink:#10192E;
+    --ink-soft:#4A5568;
+    --hero:#0B1B33;
+    --hero-soft:#16294A;
+    --blue:#1D5FFF;
+    --blue-dark:#123FB0;
+    --amber:#E8A33D;
+    --line:#E1E5EC;
+    --hero-line:rgba(255,255,255,0.14);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:var(--paper);
+    background:var(--bg);
     color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
+    font-family:'Manrope',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Unbounded',sans-serif;
+    line-height:1.15;
+    margin:0;
   }
   a{color:inherit;}
-  .display{font-family:'Space Grotesk',sans-serif;}
-  .mono{font-family:'IBM Plex Mono',monospace;}
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
-
-  a.bh{
-    color:var(--green-deep);
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .blue-link{
+    color:var(--blue);
+    font-weight:700;
     text-decoration:none;
-    border-bottom:2px solid var(--green);
-    font-weight:600;
-    white-space:nowrap;
+    border-bottom:2px solid rgba(29,95,255,0.35);
+    transition:border-color .15s ease;
+    cursor:pointer;
   }
-  a.bh:hover{background:rgba(20,108,67,0.08);}
+  .blue-link:hover{border-color:var(--blue);}
 
-  /* ===== Top ticker ===== */
-  .ticker{
-    background:var(--ink);
-    color:var(--paper);
-    font-family:'IBM Plex Mono',monospace;
-    font-size:12px;
-    letter-spacing:0.03em;
-    padding:8px 0;
-    overflow:hidden;
-    white-space:nowrap;
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(760px 420px at 85% -10%, var(--hero-soft), transparent 60%),
+      var(--hero);
+    color:#EAF0FF;
+    padding:72px 0 56px;
   }
-  .ticker span{padding-right:48px;}
-
-  /* ===== Header / statement head ===== */
-  header.statement{
-    padding:56px 0 32px;
-    border-bottom:2px solid var(--ink);
-  }
-  .stmt-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;}
-  .stmt-label{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
-  .stmt-value{font-size:13px;color:var(--ink-soft);}
-
-  /* ===== Hero ===== */
-  .hero{padding:56px 0 32px;}
-  .hero h1{
-    font-size:clamp(32px,5.5vw,54px);
-    line-height:1.05;
-    margin:0 0 18px;
-    letter-spacing:-0.01em;
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--green-deep);
-  }
-  .hero p.lede{
-    font-size:18px;
-    color:var(--ink-soft);
-    max-width:620px;
-    margin:0 0 32px;
-  }
-
-  .balance-card{
-    background:var(--paper-raised);
-    border:1px solid var(--line);
-    border-radius:2px;
-    padding:28px 28px 22px;
-    position:relative;
-    box-shadow:var(--shadow);
-  }
-  .balance-card::before{
-    content:"MONTHLY INCOME LEDGER";
-    position:absolute;
-    top:-11px;left:24px;
-    background:var(--paper);
-    padding:0 8px;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:11px;
-    letter-spacing:0.12em;
-    color:var(--muted);
-  }
-  .balance-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-  }
-  .balance-item .num{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:28px;
-    font-weight:600;
-    color:var(--green-deep);
-  }
-  .balance-item .cap{font-size:12px;color:var(--muted);margin-top:4px;}
-
-  .cta-row{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--green-deep);
-    color:var(--paper);
-    font-family:'Space Grotesk',sans-serif;
+  .hero .eyebrow{
+    color:var(--amber);
     font-weight:700;
     font-size:15px;
-    padding:14px 22px;
-    border-radius:2px;
+    letter-spacing:.02em;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(30px,5vw,44px);
+    font-weight:800;
+    color:#fff;
+    max-width:15ch;
+  }
+  .hero .spoiler{
+    margin-top:22px;
+    font-size:18px;
+    color:#C9D5F0;
+    max-width:52ch;
+  }
+  .hero .cta{
+    display:inline-block;
+    margin-top:32px;
+    background:var(--blue);
+    color:#fff;
+    font-weight:700;
+    font-family:'Unbounded',sans-serif;
+    font-size:15px;
+    padding:15px 26px;
+    border-radius:8px;
     text-decoration:none;
-    border:1px solid var(--green-deep);
+    box-shadow:0 10px 24px rgba(29,95,255,0.35);
   }
-  .btn:hover{background:var(--green);}
-  .btn.secondary{
-    background:transparent;color:var(--ink);border-color:var(--ink);
+  .hero .cta:hover{background:var(--blue-dark);}
+  .hero .stats{
+    margin-top:44px;
+    display:flex;
+    gap:36px;
+    flex-wrap:wrap;
+    border-top:1px solid var(--hero-line);
+    padding-top:28px;
   }
-  .fine{font-size:12px;color:var(--muted);}
-
-  /* ===== Section dividers ===== */
-  .section-head{
-    padding:48px 0 8px;
-    display:flex;align-items:baseline;gap:14px;
+  .hero .stat b{
+    display:block;
+    font-family:'Unbounded',sans-serif;
+    font-size:26px;
+    color:#fff;
   }
-  .section-head .idx{
-    font-family:'IBM Plex Mono',monospace;
+  .hero .stat span{
     font-size:13px;
-    color:var(--muted);
+    color:#9FB0D6;
+  }
+
+  /* ---------- INTRO ---------- */
+  .intro{
+    padding:52px 0 8px;
+  }
+  .intro p{
+    color:var(--ink-soft);
+    font-size:17px;
+    margin:0 0 18px;
+  }
+  .intro strong{color:var(--ink);}
+
+  /* ---------- PROCESS ---------- */
+  .process{
+    padding:20px 0 60px;
+  }
+  .process > .section-head{
+    margin-bottom:36px;
   }
   .section-head h2{
-    font-size:22px;margin:0;
-  }
-  .divider{border:none;border-top:1px dashed var(--line);margin:0;}
-
-  /* ===== Method entries (ledger line items) ===== */
-  .method{
-    padding:32px 0 40px;
-    border-bottom:1px dashed var(--line);
-  }
-  .method:last-of-type{border-bottom:none;}
-  .method-head{
-    display:flex;gap:18px;align-items:flex-start;margin-bottom:14px;
-  }
-  .method-no{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:13px;
-    color:var(--paper);
-    background:var(--ink);
-    width:34px;height:34px;
-    display:flex;align-items:center;justify-content:center;
-    border-radius:2px;
-    flex-shrink:0;
-  }
-  .method-head h3{
-    font-size:21px;margin:4px 0 0;
-  }
-  .method p{color:var(--ink-soft);margin:0 0 14px;max-width:640px;}
-
-  .receipt{
-    background:var(--paper-raised);
-    border:1px solid var(--line);
-    border-radius:2px;
-    padding:18px 20px;
-    max-width:640px;
-  }
-  .receipt .row{
-    display:flex;justify-content:space-between;gap:16px;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:13px;
-    padding:6px 0;
-    border-bottom:1px dotted var(--line);
-  }
-  .receipt .row:last-child{border-bottom:none;}
-  .receipt .row .k{color:var(--muted);}
-  .receipt .row .v{text-align:right;color:var(--ink);font-weight:500;}
-
-  .steps{list-style:none;margin:16px 0 0;padding:0;max-width:640px;}
-  .steps li{
-    position:relative;padding-left:26px;margin-bottom:9px;color:var(--ink-soft);font-size:15px;
-  }
-  .steps li::before{
-    content:"—";
-    position:absolute;left:0;color:var(--green-deep);font-weight:700;
-  }
-
-  /* ===== Total strip (signature element: torn receipt) ===== */
-  .total-wrap{padding:56px 0 20px;}
-  .receipt-total{
-    max-width:420px;
-    margin:0 auto;
-    background:var(--paper-raised);
-    border:1px solid var(--line);
-    padding:26px 26px 20px;
-    position:relative;
-  }
-  .receipt-total::before,.receipt-total::after{
-    content:"";
-    position:absolute;left:0;right:0;height:10px;
-    background:
-      radial-gradient(circle at 6px 5px, var(--paper) 5px, transparent 5.5px) repeat-x;
-    background-size:16px 10px;
-  }
-  .receipt-total::before{top:-5px;}
-  .receipt-total::after{bottom:-5px;transform:rotate(180deg);}
-  .receipt-total h4{
-    text-align:center;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
-    color:var(--muted);margin:0 0 16px;
-  }
-  .receipt-total .line{
-    display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:13px;
-    padding:5px 0;color:var(--ink-soft);
-  }
-  .receipt-total .grand{
-    display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;
-    font-size:18px;font-weight:600;color:var(--green-deep);
-    border-top:1px dashed var(--line);margin-top:10px;padding-top:10px;
-  }
-  .stamp{
-    display:inline-block;
-    border:2px solid var(--red);
-    color:var(--red);
-    font-family:'Space Grotesk',sans-serif;
+    font-size:26px;
     font-weight:700;
-    font-size:11px;
-    letter-spacing:0.08em;
-    padding:3px 10px;
-    border-radius:2px;
-    transform:rotate(-3deg);
-    margin-top:14px;
   }
+  .step{
+    position:relative;
+    display:flex;
+    gap:22px;
+    padding-bottom:40px;
+  }
+  .step:not(:last-child)::before{
+    content:"";
+    position:absolute;
+    left:23px;
+    top:52px;
+    bottom:0;
+    width:2px;
+    background:var(--line);
+  }
+  .step .num{
+    flex:none;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--amber);
+    color:var(--ink);
+    font-family:'Unbounded',sans-serif;
+    font-weight:700;
+    font-size:17px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:1;
+  }
+  .step .body{flex:1; min-width:0;}
+  .step .body h3{
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .step .body p{
+    color:var(--ink-soft);
+    margin:0 0 12px;
+  }
+  .step .body p:last-child{margin-bottom:0;}
+  .ref-link{
+    display:inline-block;
+    font-size:14px;
+    font-weight:700;
+    color:var(--blue);
+    background:#EAF0FF;
+    border:1px solid rgba(29,95,255,0.25);
+    border-radius:6px;
+    padding:6px 10px;
+    word-break:break-all;
+    font-family:'Manrope',monospace;
+    margin-top:4px;
+    text-decoration:none;
+  }
+  .ref-link:hover{background:#DDE8FF;}
 
-  /* ===== Closing CTA ===== */
-  .closer{
-    padding:56px 0 40px;
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    background:var(--hero);
+    color:#fff;
+    padding:56px 0;
     text-align:center;
   }
-  .closer h2{font-size:28px;margin:0 0 14px;}
-  .closer p{color:var(--ink-soft);max-width:520px;margin:0 auto 26px;}
-
-  footer{
-    border-top:2px solid var(--ink);
-    padding:28px 0 60px;
-    font-size:12px;
-    color:var(--muted);
+  .final-cta h2{
+    font-size:clamp(22px,4vw,30px);
+    color:#fff;
+    max-width:26ch;
+    margin:0 auto;
   }
-  footer p{margin:0 0 8px;max-width:720px;}
+  .final-cta .cta{
+    display:inline-block;
+    margin-top:26px;
+    background:var(--blue);
+    color:#fff;
+    font-weight:700;
+    font-family:'Unbounded',sans-serif;
+    font-size:15px;
+    padding:15px 28px;
+    border-radius:8px;
+    text-decoration:none;
+    box-shadow:0 10px 24px rgba(29,95,255,0.35);
+  }
+  .final-cta .cta:hover{background:var(--blue-dark);}
 
-  @media (max-width:640px){
-    .balance-grid{grid-template-columns:1fr;gap:14px;}
-    .method-head h3{font-size:19px;}
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:32px 0 48px;
+  }
+  footer p{
+    font-size:12.5px;
+    color:#8A93A6;
+    margin:0 0 10px;
+  }
+
+  @media (max-width:520px){
+    .hero{padding:52px 0 40px;}
+    .step{gap:14px;}
+    .step .num{width:40px;height:40px;font-size:15px;}
+    .step:not(:last-child)::before{left:19px;}
   }
 </style>
 </head>
 <body>
 
-<div class="ticker">
-  <span>BLUEHOST · UPTIME 99.98% ↑</span><span>SHARED HOSTING FROM $2.95/MO</span><span>FREE DOMAIN · YEAR 1</span><span>1-CLICK WORDPRESS INSTALL</span><span>24/7 SUPPORT</span><span>BLUEHOST · UPTIME 99.98% ↑</span><span>SHARED HOSTING FROM $2.95/MO</span><span>FREE DOMAIN · YEAR 1</span><span>1-CLICK WORDPRESS INSTALL</span><span>24/7 SUPPORT</span>
-</div>
-
-<header class="statement">
+<header class="hero">
   <div class="wrap">
-    <div class="stmt-row">
-      <div>
-        <div class="stmt-label">Account holder</div>
-        <div class="stmt-value display" style="font-size:18px;">Personal Income Statement</div>
-      </div>
-      <div style="text-align:right;">
-        <div class="stmt-label">Hosting provider</div>
-        <div class="stmt-value">
-          <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a>
-        </div>
-      </div>
+    <div class="eyebrow">АФІЛЕЙТ-МАРКЕТИНГ БЕЗ КОДУ</div>
+    <h1>Як заробляти від 1500&nbsp;$ на місяць на власному сайті?</h1>
+    <p class="spoiler">Спойлер: тобі не потрібні ІТ-навички чи вміння писати код.</p>
+    <a class="cta" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">Почати з Bluehost →</a>
+    <div class="stats">
+      <div class="stat"><b>1500 $+</b><span>Потенційний дохід на місяць</span></div>
+      <div class="stat"><b>6</b><span>Кроків до першого сайту</span></div>
+      <div class="stat"><b>0</b><span>Потрібних навичок коду</span></div>
     </div>
   </div>
 </header>
 
-<section class="hero">
+<section class="intro">
   <div class="wrap">
-    <h1 class="display">5 ways I earn <em>$1,000+ a month</em> running everything through one Bluehost account</h1>
-    <p class="lede">No agency, no employees, no code. One hosting account, five income lines. Below is exactly what each one costs to start, what it needs day to day, and what it pays.</p>
+    <p>Один із найпростіших способів заробітку в інтернеті — <strong>афілейт-маркетинг</strong>. Це коли люди переходять за твоїм посиланням на сайт і купують фізичні чи цифрові товари або якусь послугу. З кожної покупки ти отримуєш відсоток.</p>
+    <p>Новачки часто запитують, як почати займатися афілейт-маркетингом, не зливаючи на тести тисячі доларів. Відповідь — органічний трафік: Instagram, TikTok, YouTube.</p>
+    <p>Не обов'язково знімати своє обличчя — достатньо робити зйомку від третьої особи або скачати вже готові відео в інтернеті, додавши свій текст чи фільтри.</p>
+    <p>Перейдемо безпосередньо до процесу.</p>
+  </div>
+</section>
 
-    <div class="balance-card">
-      <div class="balance-grid">
-        <div class="balance-item">
-          <div class="num">$2.95</div>
-          <div class="cap">Starting cost / month</div>
-        </div>
-        <div class="balance-item">
-          <div class="num">5</div>
-          <div class="cap">Income methods, one account</div>
-        </div>
-        <div class="balance-item">
-          <div class="num">Free</div>
-          <div class="cap">Domain included, year one</div>
-        </div>
+<section class="process">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Процес у 6 кроках</h2>
+    </div>
+
+    <div class="step">
+      <div class="num">1</div>
+      <div class="body">
+        <h3>Створи сайт на Bluehost</h3>
+        <p>Найкраще зробити це на <a class="blue-link" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">Bluehost</a>. Чому саме він? По-перше, у них є <a class="blue-link" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">AI Builder</a> — достатньо ввести запит, і <a class="blue-link" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">Bluehost</a> власноруч створить сайт за 3 хвилини.</p>
+        <p>По-друге, швидкість серверів. Оскільки контент орієнтований на англомовну аудиторію, сайт має завантажуватися миттєво — західний користувач не буде чекати, якщо сторінка вантажиться довше 3 секунд.</p>
+        <p>Мінус: <a class="blue-link" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">Bluehost</a> не має українського інтерфейсу. Вихід — перекладати сторінку вбудованим Google Перекладачем або користуватися ШІ-сервісом Gemini. До речі, якщо щось незрозуміло в процесі — це ідеальний помічник: просто пишеш запит, і він допоможе сформувати промпт або доробити сайт.</p>
       </div>
-      <div class="cta-row">
-        <a class="btn" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Open a Bluehost plan →</a>
-        <span class="fine">Free domain included in year one</span>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <div class="body">
+        <h3>Обери товар на AliExpress</h3>
+        <p>Зайди на <a class="blue-link" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">AliExpress</a> і вибери будь-який товар, який хочеш просувати. Відкрий картку товару, збережи зображення і попроси Gemini написати статтю англійською про те, чому варто купити саме цей гаджет. Чим більше статей — тим краще.</p>
+        <a class="ref-link" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">aliexpress.com</a>
       </div>
     </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <div class="body">
+        <h3>Налаштуй SEO</h3>
+        <p>У <a class="blue-link" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">Bluehost</a> є вбудований сервіс <a class="blue-link" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">Yoast SEO</a>, який допоможе просувати твої статті та підбирати ключові слова.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">4</div>
+      <div class="body">
+        <h3>Дай сайту "розігрітися"</h3>
+        <p>Публікуй статті щонайменше кілька тижнів, щоб сайт мав історію та встиг заслужити довіру пошукових систем і читачів.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">5</div>
+      <div class="body">
+        <h3>Зареєструйся в афілейт-кабінеті AliExpress</h3>
+        <p>Коли вже маєш багато статей, зареєструйся за посиланням нижче й отримай власне партнерське посилання на товари.</p>
+        <a class="ref-link" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">portals.aliexpress.com/affiportals/web/portals.htm#/home</a>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">6</div>
+      <div class="body">
+        <h3>Публікуй відео у соцмережах</h3>
+        <p>Знаходь відео товарів в інтернеті та публікуй їх зі своїх акаунтів в Instagram, TikTok, YouTube. Опис до відео і трендова музика мають бути англійською.</p>
+        <p>З кожної покупки ти отримуєш відсоток. AliExpress дозволяє рекламувати понад 120 мільйонів товарів.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<div class="wrap"><hr class="divider"></div>
-
-<!-- METHOD 1 -->
-<section class="wrap">
-  <div class="method">
-    <div class="method-head">
-      <div class="method-no mono">01</div>
-      <h3 class="display">AI-written gadget-review blog + Amazon, AliExpress &amp; CJ links</h3>
-    </div>
-    <p>Buy hosting and a domain from <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a>, install WordPress in one click, and use an AI writing tool to publish "best gadgets" articles at scale. Every article carries an affiliate link to the product it reviews.</p>
-    <ul class="steps">
-      <li>Register a domain and hosting through <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a>, then install WordPress from the dashboard.</li>
-      <li>Use an AI writing assistant to draft "top 10" and "best of" gadget comparison posts.</li>
-      <li>Install Yoast SEO, set a focus keyword per post, and fix every red/orange flag before publishing.</li>
-      <li>Drop an affiliate link from Amazon Associates, AliExpress, or CJ Affiliate into every product mentioned.</li>
-      <li>Publish 3–5 posts a week and reinvest early commissions into a couple of backlinks.</li>
-    </ul>
-    <div class="receipt mono">
-      <div class="row"><span class="k">HOSTING + DOMAIN</span><span class="v">BLUEHOST</span></div>
-      <div class="row"><span class="k">CONTENT TOOL</span><span class="v">AI WRITER</span></div>
-      <div class="row"><span class="k">SEO</span><span class="v">YOAST SEO</span></div>
-      <div class="row"><span class="k">MONETIZATION</span><span class="v">AMAZON / ALIEXPRESS / CJ</span></div>
-    </div>
-  </div>
-
-  <!-- METHOD 2 -->
-  <div class="method">
-    <div class="method-head">
-      <div class="method-no mono">02</div>
-      <h3 class="display">A one-product dropshipping store</h3>
-    </div>
-    <p>Point a domain from <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a> at a WooCommerce store, list one trending product with a clean landing page, and run paid traffic to it while a supplier ships orders directly to customers.</p>
-    <ul class="steps">
-      <li>Buy a domain and a hosting plan on <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a> and install WooCommerce.</li>
-      <li>Find one trending, lightweight product with a healthy margin using a supplier research tool.</li>
-      <li>Build a single-product page with a clear headline, real photos, and short trust copy.</li>
-      <li>Connect a payment processor and set up automated order forwarding to your supplier.</li>
-      <li>Test the offer with a small daily budget on short-form video ads, then scale what converts.</li>
-    </ul>
-    <div class="receipt mono">
-      <div class="row"><span class="k">HOSTING + DOMAIN</span><span class="v">BLUEHOST</span></div>
-      <div class="row"><span class="k">STORE</span><span class="v">WOOCOMMERCE</span></div>
-      <div class="row"><span class="k">SUPPLIER</span><span class="v">ALIEXPRESS / CJ</span></div>
-      <div class="row"><span class="k">TRAFFIC</span><span class="v">SHORT-FORM VIDEO ADS</span></div>
-    </div>
-  </div>
-
-  <!-- METHOD 3 -->
-  <div class="method">
-    <div class="method-head">
-      <div class="method-no mono">03</div>
-      <h3 class="display">A digital-products &amp; mini-course hub</h3>
-    </div>
-    <p>Host a simple site on <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a>, package what you know into templates or a short course, and sell it straight from the site with an email list feeding repeat buyers.</p>
-    <ul class="steps">
-      <li>Set up WordPress on <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a> and add a lightweight checkout plugin.</li>
-      <li>Turn one skill into a template pack, worksheet bundle, or a 5-lesson mini-course.</li>
-      <li>Build a one-page sales letter with a single clear offer and one price.</li>
-      <li>Give away a small free sample in exchange for an email address to build a list.</li>
-      <li>Send a short weekly email; every third one links back to the paid product.</li>
-    </ul>
-    <div class="receipt mono">
-      <div class="row"><span class="k">HOSTING</span><span class="v">BLUEHOST</span></div>
-      <div class="row"><span class="k">CHECKOUT</span><span class="v">WORDPRESS PLUGIN</span></div>
-      <div class="row"><span class="k">LIST BUILDING</span><span class="v">EMAIL OPT-IN</span></div>
-      <div class="row"><span class="k">MONETIZATION</span><span class="v">DIRECT SALES</span></div>
-    </div>
-  </div>
-
-  <!-- METHOD 4 -->
-  <div class="method">
-    <div class="method-head">
-      <div class="method-no mono">04</div>
-      <h3 class="display">Websites for local businesses, hosted &amp; billed monthly</h3>
-    </div>
-    <p>Build simple, fast sites for local businesses that don't have one, host every client on your own <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a> account, and charge a one-time build fee plus a monthly hosting retainer.</p>
-    <ul class="steps">
-      <li>Use one <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a> plan to host multiple small client sites.</li>
-      <li>Find local businesses with no site or an outdated one via a quick maps search.</li>
-      <li>Build a 3–5 page site with a template builder: home, services, contact, reviews.</li>
-      <li>Charge a flat build fee, then bill a small monthly fee for hosting and updates.</li>
-      <li>Reinvest the first few retainers into outreach to sign the next client.</li>
-    </ul>
-    <div class="receipt mono">
-      <div class="row"><span class="k">HOSTING (MULTI-SITE)</span><span class="v">BLUEHOST</span></div>
-      <div class="row"><span class="k">BUILDER</span><span class="v">WORDPRESS THEME</span></div>
-      <div class="row"><span class="k">OUTREACH</span><span class="v">LOCAL SEARCH + EMAIL</span></div>
-      <div class="row"><span class="k">MONETIZATION</span><span class="v">BUILD FEE + RETAINER</span></div>
-    </div>
-  </div>
-
-  <!-- METHOD 5 -->
-  <div class="method">
-    <div class="method-head">
-      <div class="method-no mono">05</div>
-      <h3 class="display">Building niche sites, then flipping them</h3>
-    </div>
-    <p>Launch a niche content site on <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a>, grow it for a few months until it has steady traffic and a small income history, then sell the whole site for a multiple of its monthly earnings.</p>
-    <ul class="steps">
-      <li>Pick a narrow, evergreen niche and set it up on <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a>.</li>
-      <li>Publish consistently for 3–6 months and keep clean analytics and income records.</li>
-      <li>Add one or two monetization lines: display ads and one affiliate program.</li>
-      <li>Once income is stable for 2–3 months, list the site on a marketplace for site sales.</li>
-      <li>Sell for a multiple of monthly profit, then reinvest part of it into the next site.</li>
-    </ul>
-    <div class="receipt mono">
-      <div class="row"><span class="k">HOSTING + DOMAIN</span><span class="v">BLUEHOST</span></div>
-      <div class="row"><span class="k">GROWTH WINDOW</span><span class="v">3–6 MONTHS</span></div>
-      <div class="row"><span class="k">MONETIZATION</span><span class="v">DISPLAY ADS + AFFILIATE</span></div>
-      <div class="row"><span class="k">EXIT</span><span class="v">SITE MARKETPLACE SALE</span></div>
-    </div>
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Перший крок — створити власний сайт за 5 хв з ШІ</h2>
+    <a class="cta" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5">Розпочати з Bluehost →</a>
   </div>
 </section>
 
-<div class="total-wrap wrap">
-  <div class="receipt-total">
-    <h4>Illustrative monthly total</h4>
-    <div class="line"><span>01 — Gadget review blog</span><span>$150–400</span></div>
-    <div class="line"><span>02 — Dropshipping store</span><span>$200–600</span></div>
-    <div class="line"><span>03 — Digital products hub</span><span>$150–350</span></div>
-    <div class="line"><span>04 — Local client sites</span><span>$200–500</span></div>
-    <div class="line"><span>05 — Site flip (amortized)</span><span>$100–300</span></div>
-    <div class="grand"><span>Combined</span><span>$800–2,150</span></div>
-    <div style="text-align:center;">
-      <span class="stamp">FIGURES ARE ILLUSTRATIVE, NOT GUARANTEED</span>
-    </div>
+<footer>
+  <div class="wrap">
+    <p><strong>Партнерська відмова від відповідальності:</strong> посилання на Bluehost на цій сторінці є партнерськими (афілейт). Якщо ти реєструєшся через них, автор може отримати винагороду без додаткових витрат для тебе.</p>
+    <p>Матеріал має виключно ознайомчий характер і не є фінансовою, інвестиційною чи професійною порадою відповідно до законодавства України. Наведені показники доходу є ілюстративними прикладами і не гарантують результату — він залежить від зусиль, ніші та ринкових умов.</p>
   </div>
-</div>
-
-<section class="closer wrap">
-  <h2 class="display">All five run on the same $2.95/mo hosting plan</h2>
-  <p>You don't need five accounts or five subscriptions — one <a class="bh" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Bluehost</a> plan hosts every site above, with a free domain in the first year and one-click WordPress installs for each project.</p>
-  <a class="btn" href="https://lowest-prices.eu/a/wpqKrSyVPrs1Ep5" target="_blank" rel="noopener sponsored">Start with Bluehost →</a>
-</section>
-
-<footer class="wrap">
-  <p><strong>Affiliate disclosure:</strong> Links to Bluehost on this page are affiliate links. If you sign up through them, I may earn a commission at no extra cost to you. Income figures shown above are illustrative examples used to explain each method and are not a guarantee of earnings — results depend on effort, niche, and market conditions.</p>
-  <p>© <span id="year"></span> · Independent publisher, not affiliated with Bluehost beyond the referenced partner program.</p>
 </footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
